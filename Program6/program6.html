@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>javascript</title>
+</head>
+<h2>String and math elements in Java Script</h2>
+<script>
+	document.writeln("<h3>Math Properties</h3>")
+	document.writeln("<p>Math.PI:" + Math.PI + "</p>")
+	document.writeln("<p>Math.E:" + Math.E + "</p>")
+	document.writeln("<p>Math.SQRT2:" + Math.SQRT2 + "</p>")
+	document.writeln("<p>Math.SQRT1:" + Math.SQRT1_2 + "</p>")
+	document.writeln("<p>Math.LN2:" + Math.LN2 + "</p>")
+	document.writeln("<p>Math.LN10:" + Math.LN10 + "</p>")
+	document.writeln("<p>Math.Log2E:" + Math.LOG2E + "</p>")
+	document.writeln("<p>Math.Log10E:" + Math.LOG10E + "</p>")
+</script>
+<br>
+<h3>Math Objects</h3>
+<script>
+let number = 7.52;
+	document.writeln("Number:" + number + "<br><br>");
+	document.writeln("Integer Part:" + Math.floor(number) + "<br>");
+	document.writeln("Nearest Integer:" + Math.round(number) + "<br>");
+	document.writeln("Square root:" + Math.round(number) + "<br>");
+let nums=[4,3,7,-1];
+	document.writeln("Minimum value from(4,3,7,-1): " + Math.min(...nums) + "<br>");
+	document.writeln("Maximum value from(4,3,7,-1): " + Math.max(...nums) + "<br>");
+</script>
+<br>
+<h3>String Methods</h3>
+<script>
+let str=" Suhana Suha";
+	document.writeln("String is:"+str+"<br><br>");
+	document.writeln("Length of the string is:"+str.length+"<br>");
+	document.writeln("String in Lowercase:" + str.toLowerCase() + "<br>");
+	document.writeln("String in UpperCase:"+str.toUpperCase() + "<br>");
+let str1="Suhana";
+let str2="Suha";
+let joined=[str1,str2].join("");
+document.writeln("Joined string:"+joined + "<br>");
+let replacedStr = str.replace(/\bSuha\b/, "Suneer");
+document.writeln("String after replacing 'Suha' with 'Suneer': " + replacedStr + "<br>");
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

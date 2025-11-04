@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>form2</title>
+<script>
+function validate(){
+   var Phone = document.forms[0].Phone.value;
+   if (Phone.length < 10){
+   alert("Phone number must be at least 10 digits");
+   return false;
+   }
+   
+   var email = document.forms[0].email.value;
+   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+   if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address");
+    return false;
+  }
+  
+  var password = document.forms[0].password.value;
+  const passwordpattern =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  if (!passwordpattern.test(password)) {
+    alert("Please enter a valid password,Password must contain at least 8 characters, including uppercase, lowercase, number, and special character.");
+    return false;
+ }
+ return true;
+}
+</script>
+</head>
+
+<body>
+<form onsubmit="return validate()">
+ <fieldset>
+	<legend>User information</legend>
+	<label>Name</label>
+	<select>
+	  <option>Mr.</option>
+	  <option>Miss.</option>
+	  <option>Mrs.</option>
+	</select>
+	<input type="text" name="Name"required>
+	<br>
+	<label>Phone</label>
+	<input type="text" name="Phone" required>
+	<br>
+	<label>E-mail</label>
+	<input type="text" name="email" required>
+	<br>
+	<label>Password</label>
+	<input type="password" name="password" required>
+    <input type="Submit" value="Submit">
+   <input type="Reset" value="Reset">
+ </fieldset>
+</form>
+</body>
+</html>

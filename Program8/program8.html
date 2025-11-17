@@ -1,6 +1,19 @@
 <html>
 <head>
 <title>form2</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f2f2f2;
+  align-items:center;
+  height:100vh;
+}
+label{
+  display:block;
+  margin-bottom:5px;
+  font-weight:bold;
+}
+</style>
 <script>
 function validate(){
    var Phone = document.forms[0].Phone.value;
@@ -10,61 +23,65 @@ function validate(){
    }
    
    var email = document.forms[0].email.value;
-   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
    if (!emailPattern.test(email)) {
-    alert("Please enter a valid email address");
-    return false;
-  }
+   alert("Please enter a valid email address");
+   return false;
+   }
   
-  var password = document.forms[0].password.value;
-  var confirmpassword = document.forms[0].confirmpassword.value;
-  const passwordpattern =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+   var password = document.forms[0].password.value;
+   var confirmpassword = document.forms[0].confirmpassword.value;
+   const passwordpattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   
-  if (!passwordpattern.test(password)) {
-    alert("Please enter a valid password,Password must contain at least 8 characters, including uppercase, lowercase, number, and special character.");
-    return false;
-    }
+   if (!passwordpattern.test(password)) {
+   alert("Password must contain at least 8 characters including uppercase, lowercase, number, and special character");
+   return false;
+   }
     
-    if(confirm password !== password){
-    alert("passwords do not match");
-    return false;
- }
- alert("Registration successsful");
- return true;
+   if (confirmpassword !== password){
+   alert("Passwords do not match");
+   return false;
+   }
+
+   alert("Registration successful");
+   return true;
 }
 </script>
 </head>
 
 <body>
 <form onsubmit="return validate()">
- <fieldset>
+<fieldset>
 	<legend>User information</legend>
+
 	<label>Name</label>
 	<select>
 	  <option>Mr.</option>
 	  <option>Miss.</option>
 	  <option>Mrs.</option>
 	</select>
-	<input type="text" name="Name"required>
-	<br>
-	<br>
+	<input type="text" name="Name" required>
+	<br><br>
+
 	<label>Phone</label>
 	<input type="tel" name="Phone" required>
-	<br>
-	<br>
+	<br><br>
+
 	<label>E-mail</label>
 	<input type="text" name="email" required>
-	<br>
-	<br>
+	<br><br>
+
 	<label>Password</label>
 	<input type="password" name="password" required>
-	<br>
-	<br>
-	<label>confirm Password</label>
-	<input type="password" name="confirm password" required>
-    <input type="Submit" value="Submit">
+	<br><br>
+
+	<label>Confirm Password</label>
+	<input type="password" name="confirmpassword" required>
+	<br><br>
+
+   <input type="Submit" value="Submit">
    <input type="Reset" value="Reset">
- </fieldset>
+</fieldset>
 </form>
 </body>
 </html>
